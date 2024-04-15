@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>RetailOff</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">  
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reatil off</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-img src="../../assets/logo.png" class="mb-3 mt-0"></ion-img>
+
+    <button (click)="navigateToLogin()" class="btn btn-primary">Iniciar sesión</button>
+    <p class="m-3 fs-6">¿Aún no tienes cuenta?</p>
+    <button (click)="navigateToRegistry()" class="btn btn-primary">Crear cuenta</button>
+  </div>
+</ion-content>
