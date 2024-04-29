@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'registry',
     loadChildren: () => import('./registry/registry.module').then( m => m.RegistryPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
   }
 ];
 

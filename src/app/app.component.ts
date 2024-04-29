@@ -36,4 +36,7 @@ export class AppComponent {
     const result = this.auth.logout();    
     this.router.navigate(['/']);
   }
+  goMap(){    
+    this.router.navigate(['/map']);
+  }
 }

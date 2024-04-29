@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 
 
 @NgModule({
@@ -29,7 +30,10 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
       provideAuth(() => getAuth()),
       provideDatabase(() => getDatabase()),
     ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    BarcodeScanner,
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

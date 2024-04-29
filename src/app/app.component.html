@@ -16,6 +16,9 @@
             <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" lines="none" detail="false" routerLinkActive="">
               <ion-label>SCAN QR</ion-label>
             </ion-item>
+            <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" (click)="goMap()" lines="none" detail="false" routerLinkActive="">
+              <ion-label>Map</ion-label>
+            </ion-item>
             <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" lines="none" detail="false" routerLinkActive="">
               <ion-label>Historial</ion-label>
             </ion-item>
