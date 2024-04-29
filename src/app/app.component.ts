@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+
 export class AppComponent {
+
+  isLogin: boolean = false;
+
   public appPages = [
     { title: 'Inbox', url: '/home/inbox', icon: 'mail' },
     { title: 'Outbox', url: '/home/outbox', icon: 'paper-plane' },
@@ -14,5 +21,19 @@ export class AppComponent {
     { title: 'Spam', url: '/home/spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+    
+    constructor(private auth: AuthService, private router: Router,) {
+      this.auth.stateUser().subscribe(res =>{
+        if (res) {          
+          this.isLogin = true;
+        } else {
+          this.isLogin = false;
+        }
+      });
+    }
+
+  logout(){    
+    const result = this.auth.logout();    
+    this.router.navigate(['/']);
+  }
 }

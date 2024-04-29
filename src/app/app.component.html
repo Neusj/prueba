@@ -8,16 +8,19 @@
 
           <ion-menu-toggle auto-hide="false">
             <ion-item routerDirection="root" [routerLink]="[]" lines="none" detail="false" routerLinkActive="">
-              <ion-label>Perfil</ion-label>
-            </ion-item>
-            <ion-item routerDirection="root" [routerLink]="[]" lines="none" detail="false" routerLinkActive="">
               <ion-label>Contactanos</ion-label>
             </ion-item>
             <ion-item routerDirection="root" [routerLink]="[]" lines="none" detail="false" routerLinkActive="">
               <ion-label>Acerca de</ion-label>
             </ion-item>
-            <ion-item routerDirection="root" [routerLink]="[]" lines="none" detail="false" routerLinkActive="">
-              <ion-label>Preferencias</ion-label>
+            <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" lines="none" detail="false" routerLinkActive="">
+              <ion-label>SCAN QR</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" lines="none" detail="false" routerLinkActive="">
+              <ion-label>Historial</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" [routerLink]="[]" *ngIf="isLogin" (click)="logout()" lines="none" detail="false" routerLinkActive="">
+              <ion-label>Cerrar sesión</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

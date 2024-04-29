@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app-retail-off": {
+      "hosting": {
+        "app": [
+          "app-retail-off"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app-retail-off"
+  }
+}

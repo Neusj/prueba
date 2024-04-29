@@ -6,10 +6,29 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(
+      {
+        "projectId":"app-retail-off",
+        "appId":"1:731745955821:web:70cb8fffd4f74c276f01e4",
+        "storageBucket":"app-retail-off.appspot.com",
+        "apiKey":"AIzaSyDSIc9e_oxhCEBK7F-9vzHotzP9VO1NANA",
+        "authDomain":"app-retail-off.firebaseapp.com",
+        "messagingSenderId":"731745955821"
+      })), 
+      provideAuth(() => getAuth()),
+      provideDatabase(() => getDatabase()),
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

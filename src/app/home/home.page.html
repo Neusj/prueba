@@ -14,11 +14,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <ion-img src="../../assets/logo.png" class="mb-3 mt-0"></ion-img>
-
-    <button (click)="navigateToLogin()" class="btn btn-primary">Iniciar sesión</button>
-    <p class="m-3 fs-6">¿Aún no tienes cuenta?</p>
-    <button (click)="navigateToRegistry()" class="btn btn-primary">Crear cuenta</button>
-  </div>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size="12">
+        <ion-img src="../../assets/logo.png" class="mb-3 mt-0"></ion-img>
+        <ion-text class="ion-margin" *ngIf="isLogin">Bienvenido</ion-text>
+        <ion-button (click)="navigateToLogin()" expand="block" color="primary" *ngIf="!isLogin">Iniciar sesión</ion-button>
+        <ion-text color="medium" class="ion-margin" *ngIf="!isLogin">¿Aún no tienes cuenta?</ion-text>
+        <ion-button (click)="navigateToRegistry()" expand="block" color="primary" *ngIf="!isLogin">Crear cuenta</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
