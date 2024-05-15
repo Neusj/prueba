@@ -10,6 +10,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(
       {
         "projectId":"app-retail-off",

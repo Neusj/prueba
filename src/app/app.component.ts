@@ -39,4 +39,7 @@ export class AppComponent {
   goMap(){    
     this.router.navigate(['/map']);
   }
+  goProductos(){    
+    this.router.navigate(['/productos']);
+  }
 }
