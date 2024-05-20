@@ -25,7 +25,15 @@ const routes: Routes = [
   },
   {
     path: 'productos',
-    loadChildren: () => import('./productos/prod.module').then( m => m.ProdPageModule)
+    loadChildren: () => import('./Productos/prod.module').then( m => m.ProdPageModule)
+  },
+  {
+    path: 'listar-productos',
+    loadChildren: () => import('./listarProductos/list-prod.module').then( m => m.ListProdPageModule)
+  },
+  {
+    path: 'crear-productos',
+    loadChildren: () => import('./crearProductos/crear-prod.module').then( m => m.CreateProdPageModule)
   }
 ];
 

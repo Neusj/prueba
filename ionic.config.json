@@ -4,5 +4,11 @@
     "capacitor": {},
     "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://8vc6excpef.execute-api.us-west-2.amazonaws.com/prod/api-productos/producto/productos"
+    }
+  ]
 }

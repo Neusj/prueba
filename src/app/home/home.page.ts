@@ -33,6 +33,7 @@ export class homePage implements OnInit {
 
   ngOnInit() {
     this.home = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    //this.scan();
   }
 
   navigateToLogin() {

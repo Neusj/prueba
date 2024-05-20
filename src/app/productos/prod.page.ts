@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map',
   templateUrl: './prod.page.html',
   styleUrls: ['./prod.page.scss'],
 })
-export class ProdPage implements OnInit {
+export class ProdPage {
   public productos: any = [];
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, ) { }
 
-  ngOnInit() {
-    
-    this.http.get<any>('https://gpy6uzcaq9.execute-api.us-west-2.amazonaws.com/producto/todos')
-      .subscribe(response => {
-        this.productos = response.productos;
-      });
+
+  crearProducto(){
+    this.router.navigate(['/crear-productos']);
   }
-  
+
+  listarProductos(){
+    this.router.navigate(['/listar-productos']);
+  } 
 }

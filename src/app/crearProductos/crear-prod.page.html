@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Crear Producto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="container mt-4">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" [(ngModel)]="producto.nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="peso" class="form-label">Peso</label>
+          <input type="number" id="peso" [(ngModel)]="producto.peso" name="peso" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input type="number" id="precio" [(ngModel)]="producto.precio" name="precio" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Producto</button>
+      </form>
+    </div>
+  </ion-content>
+  
